@@ -6,16 +6,21 @@ require('./PropertyConstan.php');
 use Pbo\Marketplace\Produk;
 
 //object
-$produk = new Produk('P001', 'Laptop', 10000000, 5);
+$produk = new Produk();
+
+$produk->setKode('P0001')
+       ->setNama('Laptop')
+       ->setHarga('10000000')
+       ->setStok(5);
 
 //Hasil
-echo "Produk:", $produk->nama;
+echo "Produk:", $produk->getNama();
 echo "<br/>";
 
-echo "harga: Rp.", $produk->harga;
+echo "harga: Rp.", $produk->getHarga();
 echo "<br/>";
 
-echo "stok:", $produk->stok;
+echo "stok:", $produk->getStok();
 echo "<br/>";
 
 echo "pajak:", $produk->pajak() . "%";
